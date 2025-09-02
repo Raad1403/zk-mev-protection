@@ -26,7 +26,7 @@ I'm reaching out regarding a breakthrough in MEV protection that could significa
 0x4536227D719E6aB27506E9c3Ec529ea9688D2754 (Sepolia)
 Verify: https://sepolia.etherscan.io/address/0x4536227D719E6aB27506E9c3Ec529ea9688D2754
 
-**GitHub Repository**: [Will be added after GitHub setup]
+**GitHub Repository**: https://github.com/Raad1403/zk-mev-protection
 
 **Why This Matters for 1inch**:
 • Users choosing aggregators increasingly prioritize MEV protection

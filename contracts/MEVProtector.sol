@@ -45,6 +45,7 @@ contract MEVProtector is Ownable, ReentrancyGuard {
     {
         require(msg.value >= protectionFee, "Insufficient protection fee");
         require(!commitments[commitmentHash], "Commitment already exists");
+        require(commitmentHash != 0, "Invalid commitment hash");
         
         commitments[commitmentHash] = true;
         commitmentBlocks[commitmentHash] = block.number;
@@ -69,6 +70,11 @@ contract MEVProtector is Ownable, ReentrancyGuard {
         uint256 commitmentHash = input[0];
         uint256 nullifier = input[1];
         uint256 blockNumber = input[2];
+        
+        // Input validation
+        require(commitmentHash != 0, "Invalid commitment hash");
+        require(nullifier != 0, "Invalid nullifier");
+        require(blockNumber > 0, "Invalid block number");
         
         // Verify commitment exists and timing
         require(commitments[commitmentHash], "Invalid commitment");
